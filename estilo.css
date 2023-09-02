@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%; /*--------Responsive pantalla*/
+}
+body{
+    font-size: 1.2rem; /*----6px----*/
+    min-height: 100%;
+}
+header.header{
+    font-size: 60px;
+    font-family: Verdana;
+}
+#Nicolas{
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #ffba52; 
+}
+
+#introduccion,
+#cosmologia,
+#origen,
+#edad{
+    font-size: 20px;
+    color: #ffba52; 
+}
+.contenido {
+    color: #ffffff;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+p{
+    text-align: left;
+    padding: 10px;
+    margin-top: 5px;
+}
+p.Copernico{
+    font-size: 12px;
+    color: #ffffff;
+}
+#subtitulo1{
+    color: #64dbff;
+}
+.subtitulos{
+    color: #64dbff;
+}
+#titulo{
+    text-align: center;
+}
+#subtitulo1{
+    margin-top: 15px;
+}
+.contenedor > * {
+    box-shadow: rgba(0,0,0,0.75) 0px 5px 15px;
+    padding: 10px;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 18px;
+}
+
+/* . ---> class # ---> id */
+
+.header{
+    grid-area: header;
+    font-family: "Roboto", sans-serif;
+    background-color: #0a0018; /* Azul oscuro como fondo */
+    color: #ffffff; /* Texto en blanco para contraste */
+    padding: 10px;
+}
+#navbar {
+    grid-area: navbar;
+    background: #000033;
+    text-align: left;
+    color: #ffffff;
+    padding: 10px;
+}
+
+#navbar ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#navbar a:hover {
+    color: #ffd000;
+    font-size: 22px;
+    transition: 0.5s;
+}
+
+#main{
+    grid-area: main;
+    background: #111;
+    color: rgba(255, 255, 255, 0.8);
+}
+#sidebar{
+    grid-area: sidebar;
+    background: #2d2d2d;
+}
+#footer{
+    grid-area: footer;
+    background: #1f1f1f;
+    color: aliceblue;
+}
+div#text_footer{
+    grid-area: footer;
+    background: #1f1f1f;
+    color: aliceblue;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+}
+/*---------------------------- grid template column ------*/
+.contenedor{
+    display: grid;
+    gap: 10px;
+    grid-template:
+    "header"    100px
+    "navbar"    50px
+    "main"      auto
+    "sidebar"   100px
+    "footer"    100px;
+}
+
+/*-------------------------- @media (responsive dispositivo) -----------------------*/
+
+@media (min-width:600px){
+    .contenedor{
+
+    grid-template:
+    "header     header" 100px
+    "navbar     navbar" 50px
+    "sidebar    main"  auto
+    "footer     footer" 100px /
+    200px auto;
+    }
+}
+
+/*-------------------------- @media 900 -----------------------*/
+
+@media (min-width:900px){
+    .contenedor{
+        
+    grid-template:
+    "header header  header" 100px
+    "navbar main    sidebar"  auto
+    "footer footer  footer" 100px/
+    200px auto 200px;
+    }
+}
